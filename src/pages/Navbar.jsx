@@ -33,14 +33,14 @@ const Navbar = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
 
+    const [anchorElNav, setAnchorElNav] = React.useState(null); //MOVED THE LINE TO HERE    
     React.useEffect(() => {
         if (currentRole === "Customer") {
             console.log(currentUser);
             dispatch(updateCustomer(currentUser, currentUser._id));
         }
-    }, [currentRole, currentUser, dispatch, ancorElNav])
+    }, [currentRole, currentUser, dispatch, anchorElNav]) // MADE IT anchorElNav
 
-    const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
     const [anchorElSign, setAnchorElSign] = React.useState(null);
 
@@ -50,12 +50,16 @@ const Navbar = () => {
     const [isCartOpen, setIsCartOpen] = React.useState(false);
 
     // Cart
-    const handleOpen Cart = () => {
+    const  Cart = () => {  //REMOVED THE MIDDLE WORD
         setIsCartOpen(true);
     };
 
     const handleOpenCart = () => {
         setIsCartOpen(false);
+    };
+
+    const handleCloseCart = () => {
+        setIsCartOpen(true);          // ADDED THIS FUNCTION
     };
 
     // Navigation Menu

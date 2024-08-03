@@ -10,6 +10,7 @@ import { addStuff } from '../redux/userHandle';
 
 const Products = ({}) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate(); // addded this line
 
   const itemsPerPage = 9;
 
@@ -19,8 +20,9 @@ const Products = ({}) => {
   const [message, setMessage] = useState("");
 
   const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem + itemsPerPage;
-  const currentItems = (indexOfFirstItem, indexOfLastItem);
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage; // SUBTRATION INSTAED OF ADDITION
+  const currentItems = responseSearch.slice(indexOfFirstItem, indexOfLastItem); // SLICE
+
 
   const handleAddToCart = (event, product) => {
     event.stopPropagation();
@@ -86,7 +88,7 @@ const Products = ({}) => {
 
       <Container sx={{ mt: 10, mb: 10, display: "flex", justifyContent: 'center', alignItems: "center" }}>
         <Pagination
-          count={Math.ceil(productData.length / itemsPerPage)}
+          count={Math.ceil(currentItems.length / itemsPerPage)} // PRODUCTDATA AS CURRENTITEMS
           page={currentPage}
           color="secondary"
 

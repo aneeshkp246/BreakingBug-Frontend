@@ -283,9 +283,11 @@ export const {
     authRequest,
     underControl,
     stuffAdded,
+    getCustomersListFailed, //updated
     stuffUpdated,
     updateFailed,
     authSuccess,
+    setFilteredProducts, //updated
     authFailed,
     authError,
     authLogout,

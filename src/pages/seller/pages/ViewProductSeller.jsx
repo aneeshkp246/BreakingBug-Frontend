@@ -107,6 +107,8 @@ const ViewProductSeller = () => {
     }
   }, [status, error, dispatch, productID]);
 
+  const buttonText = showTab ? "Hide Details" : "Show Details";
+
   return (
     <>
       {loading ?
@@ -283,8 +285,8 @@ const ViewProductSeller = () => {
 
                   {productDetails.reviews && productDetails.reviews.length > 0 &&
                     <DarkRedButton onClick={() => {
-                      setDialog("Do you want to delete all notices ?")
-                      setShowDialog(true)
+                      setDialog("Do you want to delete all reviews?");
+                      setShowDialog(true);
                     }}>
                       Remove All Reviews
                     </DarkRedButton>}
@@ -296,12 +298,11 @@ const ViewProductSeller = () => {
                       <ReviewCard key={index}>
                         <ReviewCardDivision>
                           <Avatar sx={{ width: "60px", height: "60px", marginRight: "1rem", backgroundColor: generateRandomColor(review._id) }}>
-                            {String(reviewreviewername).charAt(0)}
+                            {String(review.reviewername).charAt(0)}
                           </Avatar>
                           <ReviewDetails>
-                            <Typography variant="h6">{reviewreviewername}</Typography>
+                            <Typography variant="h6">{review.reviewername}</Typography>
                             <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
-
                               <Typography variant="body2">
                                 {timeAgo(review.date)}
                               </Typography>
@@ -337,20 +338,19 @@ const ViewProductSeller = () => {
 export default ViewProductSeller;
 
 const ProductContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    justify-content: center;
-    align-items: center;
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: center;
+  align-items: center;
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 const ProductImage = styled.img`
-    max-width: 300px;
-    /* width: 50%; */
-    margin-bottom: 20px;
+  max-width: 300px;
+  margin-bottom: 20px;
 `;
 
 const EditImage = styled.img`
@@ -360,57 +360,57 @@ const EditImage = styled.img`
 `;
 
 const ProductInfo = styled.div`
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ProductName = styled.h1`
-    font-size: 24px;
+  font-size: 24px;
 `;
 
 const PriceContainer = styled.div`
-    display: flex;
-    gap: 8px;
-    margin-top: 8px;
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
 `;
 
 const PriceMrp = styled.p`
-    margin-top: 8px;
-    text-decoration: line-through;
-    color: #525050;
+  margin-top: 8px;
+  text-decoration: line-through;
+  color: #525050;
 `;
 
 const PriceCost = styled.h3`
-    margin-top: 8px;
+  margin-top: 8px;
 `;
 
 const PriceDiscount = styled.p`
-    margin-top: 8px;
-    color: darkgreen;
+  margin-top: 8px;
+  color: darkgreen;
 `;
 
 const Description = styled.p`
-    margin-top: 16px;
+  margin-top: 16px;
 `;
 
 const ProductDetails = styled.div`
-    margin: 16px;
+  margin: 16px;
 `;
 
 const ButtonContainer = styled.div`
-    margin: 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ReviewWritingContainer = styled.div`
-    margin: 6rem;
-    display: flex;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    flex-direction:column;
+  margin: 6rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const ReviewContainer = styled.div`

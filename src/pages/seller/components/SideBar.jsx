@@ -15,7 +15,7 @@ const SideBar = () => {
     
 
     const { currentRole } = useSelector(state => state.user);
-
+    const location = useLocation()// ADDED THIS LINE
     return (
         <>
             <React.Fragment>

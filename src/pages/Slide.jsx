@@ -1,6 +1,6 @@
 import { Divider, Box, Typography, Button, styled, Container } from '@mui/material';
 
-import { Link, useNavigate } from 'react-router';
+import { useNavigate} from 'react-router';
 import Carousel from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
@@ -37,7 +37,7 @@ const Slide = ({ products, title }) => {
                 itemClass="carousel-item-padding-40-px">
                 {
                     products.map((product, index) => (
-                        <Link key={index} to={`/product/view/${product._id}`} style={{ textDecoration: 'none' }}>
+                        <useNavigate key={index} to={`/product/view/${product._id}`} style={{ textDecoration: 'none' }}>
                             <Box textAlign="center" style={{ padding: '25px 15px' }}>
                                 <Image src={product.productImage} />
                                 <TitleText style={{ fontWeight: 600, color: '#212121' }}>{product.productName}</TitleText>
@@ -48,7 +48,7 @@ const Slide = ({ products, title }) => {
                                 </TextContainer>
                                 <Text style={{ color: '#212121', opacity: '.6' }}>{product.tagline}</Text>
                             </Box>
-                        </Link>
+                        </useNavigate>
                     ))
                 }
             </Carousel>

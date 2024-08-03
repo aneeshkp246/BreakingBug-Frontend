@@ -6,7 +6,7 @@ import {
     Drawer as MuiDrawer,
     AppBar as MuiAppBar,
 } from "@mui/material";
-import { Link } from "react-scroll";
+import { Link, Button } from "react-scroll"; // ADDED BUTTON
 
 const drawerWidth = 240
 
@@ -73,7 +73,14 @@ export const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 
         },
     }),
 );
-
+export const LightPurpleButton = styled(Button)`
+  background-color: lightpurple;
+  color: #fff;
+`;
+export const BasicButton = styled(Button)`
+  background-color: #fff;
+  color: #000;
+`;
 export const NavLogo = styled(Link)`
     display: flex;
 `;
