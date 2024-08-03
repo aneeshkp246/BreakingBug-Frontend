@@ -120,7 +120,8 @@ For example, if your github username is "MyGithubUsername", then the URL will be
 `https://vercel.com/new/git/external?repository-url=https://github.com/MyGithubUsername/BreakingBug-Frontend`
 
 Then, copy and paste the URL on your browser to deploy your website.
-
+##MY BUG SHEET
+https://docs.google.com/spreadsheets/d/1-iG9yGLYtXU0KKffAxeiJMmROszTzuddMXFdUnFamM0/edit?usp=sharing
 
 ## Getting Resources
 - [Rulebook](https://docs.google.com/document/d/1W96Pln4oXW3Uhar6WTY2Ldnmlp0U78ar8EArx3N8mcE/edit?usp=sharing)
